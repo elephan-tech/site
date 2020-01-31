@@ -7,7 +7,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "deploy": "git add . && git commit -m 'quick' && git push"
   },
   "author": "etech",
   "license": "ISC",

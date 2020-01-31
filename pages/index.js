@@ -13,7 +13,7 @@ const index = () => {
               <img height="250px" width="auto" src={etLogo} alt="Elephantech Logo" />
             </div>
             <div style={{ width: '75%', margin: 'auto', textAlign: 'center' }}>
-              <h1 className="displayTitle">Elephantech is currently under construction</h1>
+              <h1 className="displayTitle">Elephan.tech is currently under construction</h1>
             </div>
             {/* <h2 className="subtitle">Follow us in social media =></h2> */}
 
