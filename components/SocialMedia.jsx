@@ -7,7 +7,6 @@ const socialMedias = [
   { platform: 'youtube', logo: '', handle: 'elephantech' }
 ];
 
-
 const SocialMedia = () => {
 
   const Link = ({ url, logo, platform }) => {
@@ -27,11 +26,11 @@ const SocialMedia = () => {
   }
   return (
     <div style={{ zIndex: 5034, display: 'flex', flexDirection: "column" }}>
-      {/* {socialMedias.map((item) => {
+      {socialMedias.map((item) => {
         const url = `https://www.${item.platform}.com/${item.platform === 'linkedin' ? String.raw`in/` : ''}${item.handle}`;
         return (<Link {...item} url={url} />)
       }
-      )} */}
+      )}
     </div>
   )
 }
