@@ -30,30 +30,31 @@ min-height: 80px;
 position: ${props => props.position || 'fixed'};
 background: ${props => props.color || 'white'};
 box-shadow: ${({ theme }) => shadow(theme.palette.black)};
-.section{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-grow:1;
-  min-height: 50px;
-  min-width: 20%;
-    transition: all 300ms linear 0s;
-    cursor: pointer;
-    &:hover {
-      color: ${({ theme }) => theme.palette.primary.main} ;
-      border-bottom: ${({ theme }) => `3px solid ${theme.palette.accent.main}`};
-    }
-    @media (max-width: 768px) {
-      display: none;
-    }
-}
 `
 
 const Link = styled.a`
   font-weight: 300;
   text-decoration: none;
-  color: ${({ theme }) => theme.palette.black};
+  color: ${({ theme, name }) => name === 'Contact'? theme.palette.white : theme.palette.black};
+
+  background: ${props => props.name === 'Contact' ? props.theme.palette.accent.main : `white` };
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow:1;
+  min-height: 80px;
+  min-width: 20%;
+    transition: all 300ms linear 0s;
+    cursor: pointer;
+    &:hover {
+      color: ${({ theme }) => theme.palette.primary.main} ;
+      border-bottom: ${({ theme, name }) => name === 'Logo' ? 'none' : `3px solid ${theme.palette.accent.main} `};
+    }
+    @media (max-width: 768px) {
+      display: none;
+    }
 `
+
 
 const Header = () => {
   const barAnimation = useSpring({
@@ -71,11 +72,12 @@ const Header = () => {
     <Navbar style={barAnimation}>
       {routes.map(({ name, url }, i) => {
         return (
-          <div key={i} className="section" style={linkAnimation}>
-            <Link href={url}>
+        
+            <Link href={url} key={i} name={name} className="section" style={linkAnimation}>
               {name === 'Logo' ? <Logo /> : name}
             </Link>
-          </div>)
+          
+          )
       })}
     </Navbar>
   )
