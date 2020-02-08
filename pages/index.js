@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from '../components/Card'
-import etLogo from '../static/etLogo.png'
+import etLogo from '../public/etLogo.png'
 import SocialMedia from '../components/SocialMedia'
 import Page from '../components/Page'
 
