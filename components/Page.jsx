@@ -7,6 +7,7 @@ import styled from 'styled-components'
 const Inner = styled.div`
   max-width: ${props => props.theme.maxWidth};
   margin: 0 auto;
+  margin-top: 80px;
   padding: 2rem;
   min-height: 500px;
   height: auto;
