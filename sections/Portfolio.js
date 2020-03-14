@@ -1,11 +1,11 @@
 import React from 'react'
-import Page from '../components/Page'
+import Section from '../components/Section'
 
 const Portfolio = () => {
   return (
-    <Page title="Portfolio">
-      hello
-    </Page>
+    <Section title="Portfolio">
+     nkenrfkenr
+    </Section>
   )
 }
 

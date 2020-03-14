@@ -1,11 +1,11 @@
 import React from 'react'
-import Page from '../components/Page';
+import Section from '../components/Section';
 
 const Team = () => {
   return (
-    <Page title="Team">
+    <Section title="Team">
       team
-    </Page>
+    </Section>
 
   )
 }

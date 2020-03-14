@@ -9,13 +9,14 @@ const Inner = styled.div`
   margin: 0 auto;
   margin-top: 80px;
   padding: 2rem;
-  min-height: 500px;
   height: auto;
+  font-family: ${props => props.theme.font.family};
+  font-size: ${props => props.theme.font.size};
 `;
 
 const Page = ({ title, description, children }) => {
   return (
-    <div id={title}>
+    <div>
       <Meta title={title} description={description} />
       <Navbar />
       <Inner>{children}</Inner>

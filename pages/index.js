@@ -7,7 +7,7 @@ import Page from '../components/Page'
 const index = () => {
   return (
     <Page>
-      <div id="root">
+      <div>
         <About />
         <Team />
         <Portfolio />

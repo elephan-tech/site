@@ -1,11 +1,11 @@
 import React from 'react'
-import Page from '../components/Page'
+import Section from '../components/Section'
 
 const About = () => {
   return (
-    <Page title="About">
+    <Section title="About">
       hello
-    </Page>
+    </Section>
   )
 }
 

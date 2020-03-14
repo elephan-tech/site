@@ -48,7 +48,7 @@ const Link = styled.a`
   text-decoration: none;
   color: ${({ theme, name }) => name === 'Contact' ? theme.palette.white : theme.palette.black};
   background: ${props => props.name === 'Contact' ? props.theme.palette.accent.main : `white`};
-   display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   flex-grow:1;

@@ -1,4 +1,8 @@
 const theme = {
+  font:{
+    size: '14px',
+    family: 'Futura, sans-serif',
+  },
   palette: {
     primary: {
       main: '#357081',
