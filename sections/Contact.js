@@ -4,9 +4,7 @@ import Page from '../components/Page'
 const Contact = () => {
   return (
     <Page title="Contact">
-      <Grid>
-
-      </Grid>
+      feijrf
     </Page>
   )
 }
