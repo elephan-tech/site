@@ -1,11 +1,4 @@
 import React from 'react'
 import logo from '../public/etLogo.svg'
 
-const Logo = () => {
-  return (
-    <img height="60px" width="auto" src={logo} alt="elephantec logo" />
-  )
-
-}
-
-export default Logo
+export default () => <img height="60px" width="auto" src={logo} alt="elephantech logo" />

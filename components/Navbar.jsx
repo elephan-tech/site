@@ -1,15 +1,26 @@
 import React from 'react'
 import Logo from './Logo'
 import styled from 'styled-components'
+import Router from 'next/router'
 import { useSpring, animated, config } from 'react-spring';
+import NProgress from 'nprogress';
 
+Router.onRouteChangeStart = () => {
+  NProgress.start();
+};
+Router.onRouteChangeComplete = () => {
+  NProgress.done();
+};
+Router.onRouteChangeError = () => {
+  NProgress.done();
+};
 
 const routes = [
-  { name: 'About', url: '/about' },
-  { name: 'Team', url: '/team' },
+  { name: 'About', url: '#About' },
+  { name: 'Team', url: '#Team' },
   { name: 'Logo', url: '/' },
-  { name: 'Portfolio', url: '/portfolio' },
-  { name: 'Contact', url: '/contact' }
+  { name: 'Portfolio', url: '#Portfolio' },
+  { name: 'Contact', url: '#Contact' }
 ];
 
 const shadow = (color) => {
@@ -35,9 +46,8 @@ box-shadow: ${({ theme }) => shadow(theme.palette.black)};
 const Link = styled.a`
   font-weight: 300;
   text-decoration: none;
-  color: ${({ theme, name }) => name === 'Contact'? theme.palette.white : theme.palette.black};
-
-  background: ${props => props.name === 'Contact' ? props.theme.palette.accent.main : `white` };
+  color: ${({ theme, name }) => name === 'Contact' ? theme.palette.white : theme.palette.black};
+  background: ${props => props.name === 'Contact' ? props.theme.palette.accent.main : `white`};
    display: flex;
   align-items: center;
   justify-content: center;
@@ -72,12 +82,10 @@ const Header = () => {
     <Navbar style={barAnimation}>
       {routes.map(({ name, url }, i) => {
         return (
-        
-            <Link href={url} key={i} name={name} className="section" style={linkAnimation}>
-              {name === 'Logo' ? <Logo /> : name}
-            </Link>
-          
-          )
+          <Link href={url} key={i} name={name} className="section" style={linkAnimation}>
+            {name === 'Logo' ? <Logo /> : name}
+          </Link>
+        )
       })}
     </Navbar>
   )

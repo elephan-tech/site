@@ -16,15 +16,22 @@ const theme = {
       dark: '#357d62'
     },
     black: '#000000',
-    white: '#ffffff'
+    white: '#ffffff',
+    warning: '#EDC73F',
+    error: '#E70A0A',
+    success: '#64B215',
+    info: '#23b4bd'
   },
-  warning: '#EDC73F',
-  error: '#E70A0A',
-  success: '#64B215',
-  info: '#23b4bd'
+  dimensions: {
+    maxWidth: '1000px',
+  },
+  breakpoints: {
+
+  }
 }
 
 export const darkTheme = {
+  ...theme,
   palette: {
     primary: {
       main: '#263238',
