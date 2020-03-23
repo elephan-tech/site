@@ -1,6 +1,14 @@
 const theme = {
-  font:{
-    size: '14px',
+  unit: (size) => `${size ? (size * 8) : 8}px`,
+  font: {
+    size: {
+      small: '9px',
+      medium: '11px',
+      main: '14px',
+      big: '18px',
+      bigger: '24px',
+      giant: '30px'
+    },
     family: 'Futura, sans-serif',
   },
   palette: {
@@ -31,7 +39,8 @@ const theme = {
   },
   breakpoints: {
 
-  }
+  },
+  shadow: (v) => `5px ${v ? (v * 2) : 2}px 10px 0px ${theme.palette.secondary.dark}50`
 }
 
 export const darkTheme = {
