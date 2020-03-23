@@ -119,6 +119,8 @@ const Input = ({
     number: { regex: /([0-9])\w+/g, message: 'Numbers only' }
   };
 
+  console.log('fkejrnfkjernfkejn')
+
   useEffect(() => {
     const validatorType = variant.toLowerCase()
     setPattern(validator[validatorType].regex)
