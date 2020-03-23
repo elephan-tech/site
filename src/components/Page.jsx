@@ -14,13 +14,18 @@ const Inner = styled.div`
   font-size: ${props => props.theme.font.size};
 `;
 
+const StyledPage = styled.div`
+  font-family: ${props => props.theme.font.family};
+  font-size: ${props => props.theme.font.size};
+`
+
 const Page = ({ title, description, children }) => {
   return (
-    <div>
+    <StyledPage>
       <Meta title={title} description={description} />
       <Navbar />
       <Inner>{children}</Inner>
-    </div>
+    </StyledPage>
   )
 }
 
