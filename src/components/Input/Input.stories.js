@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee, faWeightHanging, faWheelchair, faUser, faAt, faPhone, faNumbers, faLetters } from '@fortawesome/free-solid-svg-icons'
+import { faCoffee, faWeightHanging, faFont, faUser, faAt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import Input from '.';
 import Grid from '../Grid';
 import Logo from '../Logo'
@@ -9,7 +9,7 @@ import Logo from '../Logo'
 storiesOf('Input', module)
   .add('Name Input', () => <Input label="Name" placeholder="Pablo" variant="text" errorMessage="Invalid Name" onChange={(e) => console.log(e.target.value)} />)
   .add('with placeholder', () => <Input variant="text" startIcon={<FontAwesomeIcon icon={faCoffee} />} label="Name" placeholder="coffee?" onChange={(e) => console.log(e.target.value)} />)
-  .add('with start icon', () => <Input variant="numberd" startIcon={<FontAwesomeIcon icon={faWeightHanging} />} label="Weight" endIcon="kg" onChange={(e) => console.log(e.target.value)} />)
+  .add('with start icon', () => <Input variant="number" startIcon={<FontAwesomeIcon icon={faWeightHanging} />} label="Weight" endIcon="kg" onChange={(e) => console.log(e.target.value)} />)
   .add('with end icon', () => <Input variant="text" endIcon={"$"} label="Name" onChange={(e) => console.log(e.target.value)} />)
   .add('two inputs', () => (
     <>
@@ -39,7 +39,7 @@ storiesOf('Input', module)
         <Input label="email" variant="email" startIcon={<FontAwesomeIcon icon={faAt} onChange={e => console.log(e.target)} />} />
       </Grid>
       <Grid row>
-        <Input label="phone number" variant="tel" startIcon={<FontAwesomeIcon icon={faPhone} onChange={e => console.log(e.target)} />} />
+        <Input label="phone number" variant="tel" startIcon={<FontAwesomeIcon icon={faPhone} />} onChange={e => console.log(e.target)} />
       </Grid>
     </Grid>
   ))
@@ -48,19 +48,43 @@ storiesOf('Input', module)
       <>
         <Input
           label="Text only"
-          // startIcon={<FontAwesomeIcon icon={faLetters}/>}
+          startIcon={<FontAwesomeIcon icon={faFont} />}
           placeholder="Text Input"
           errorMessage="Custom error message: text only bitch"
           onChange={e => console.log(e.target.value)}
-          variant="Text"
+          variant="text"
         />
         <Input
           label="Numbers only"
-          // startIcon={<FontAwesomeIcon icon={faNumbers}/>}
-          placeholder="Numbner Input"
+          startIcon={"#"}
+          placeholder="Number Input"
           errorMessage="Custom error message: numbers only bitch"
           onChange={e => console.log(e.target.value)}
-          variant="Number"
+          variant="number"
+        />
+        <Input
+          label="Email only"
+          startIcon={"@"}
+          placeholder="Email Input"
+          errorMessage="Bitch I said email"
+          onChange={e => console.log(e.target.value)}
+          variant="email"
+        />
+        <Input
+          label="Phone only"
+          startIcon={<FontAwesomeIcon icon={faPhone} />}
+          placeholder="Phone # Input"
+          errorMessage="Bitch I said email"
+          onChange={e => console.log(e.target.value)}
+          variant="tel"
+        />
+        <Input
+          label="Message"
+          startIcon={<FontAwesomeIcon icon={faEnvelope} />}
+          placeholder="Basically anything goes"
+          errorMessage="Bitch I said email"
+          onChange={e => console.log(e.target.value)}
+          variant="message"
         />
       </>
     )

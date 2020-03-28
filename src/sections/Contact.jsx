@@ -59,7 +59,7 @@ const Contact = () => {
               <Input
                 startIcon={<FontAwesomeIcon icon={faEnvelope} />}
                 label="message"
-                variant="text"
+                variant="message"
                 onChange={handleChange}
               />
             </Grid>
