@@ -40,7 +40,7 @@ const theme = {
   breakpoints: {
 
   },
-  shadow: (v) => `5px ${v ? (v * 2) : 2}px 10px 0px ${theme.palette.secondary.dark}50`
+  shadow: (v) => `5px ${v ? (v * 10) : 10}px 10px 0px ${theme.palette.secondary.dark}50`
 }
 
 export const darkTheme = {

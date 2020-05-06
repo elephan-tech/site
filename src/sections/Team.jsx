@@ -3,9 +3,7 @@ import Section from '../components/Section';
 
 const Team = () => {
   return (
-    <Section title="Team">
-      team
-    </Section>
+    'team'
 
   )
 }
