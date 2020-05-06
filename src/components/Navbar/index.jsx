@@ -4,7 +4,7 @@ import Logo from '../Logo'
 import Router from 'next/router'
 import NProgress from 'nprogress';
 import { Link } from './styles'
-import { useSpring, animated, config } from 'react-spring';
+import { useSpring, config } from 'react-spring';
 import Grid from '../Grid';
 import Surface from '../Surface';
 import { styled } from '@storybook/theming';
