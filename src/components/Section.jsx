@@ -7,16 +7,18 @@ const SectionStyle = styled.div`
     flex-grow: 1;
     flex-direction: column;
     align-content: center;
-    justify-content: center;
-    padding: ${props => props.theme.unit * 2};
-    margin: 16px auto;
+    padding: ${props => props.theme.unit(3)};
+    margin: ${props => props.theme.unit(3)};
     background: white;
+    background-image: ${props => props.backgroundImage};
+    background-repeat: no-repeat;
+    background-position: ${props => props.position};
 `;
 
-const Section = ({ children, title }) => {
+const Section = (props) => {
   return (
-    <SectionStyle id={title}>
-      {children}
+    <SectionStyle {...props}>
+      {props.children}
     </SectionStyle>
   )
 }

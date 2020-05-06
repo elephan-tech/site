@@ -1,21 +1,7 @@
 import React from 'react'
-import {
-  About,
-  Contact,
-  Team,
-  Portfolio
-} from '../sections'
+import sections from '../sections'
 import Page from '../components/Page'
+import { Section } from '../components'
 
-const index = () => {
-  return (
-    <Page>
-      <About />
-      <Team />
-      <Portfolio />
-      <Contact />
-    </Page>
-  )
-}
+export default () => <Page> {sections.map(({ RenderSection, title }) => <Section key={title} title={title}><RenderSection /></Section>)}</Page>
 
-export default index

@@ -45,7 +45,7 @@ stories
   .add('Grid', () => (
     <Grid justify="space-evenly">
       <Grid row>
-        <Card round fullWidth></Card>
+        <Card round pad fullWidth></Card>
         <Card round fullWidth></Card>
       </Grid>
       <Grid row>

@@ -1,8 +1,7 @@
+import React from 'react'
 import styled from 'styled-components'
 
-import React from 'react'
-
-const Grid = ({ children, row, spacing, align, justify }) => {
+const Grid = ({ children, row, spacing, align, justify, pad, noFlex, style }) => {
 
   const StyledGrid = styled.div`
     display: flex;
@@ -11,15 +10,11 @@ const Grid = ({ children, row, spacing, align, justify }) => {
     align-items: ${align || 'flex-start'};
     justify-content: ${justify || 'space-evenly'};
     margin: 0px ${({ theme }) => theme.unit()};
-    padding: ${({ theme }) => theme.unit()};
-    width: -webkit-fill-available;
-    min-width : ${ row && '50%'};
+    padding: ${({ theme }) => pad && theme.unit()};
+    width: ${noFlex ? '' : '-webkit-fill-available'};
   `
-  return (
-    <StyledGrid>
-      {children}
-    </StyledGrid>
-  )
+  return <StyledGrid style={style} children={children} />
+
 }
 
 export default Grid
