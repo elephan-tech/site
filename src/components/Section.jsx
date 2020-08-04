@@ -13,6 +13,7 @@ const SectionStyle = styled.div`
     background-image: ${props => props.backgroundImage};
     background-repeat: no-repeat;
     background-position: ${props => props.position};
+    font-family: ${props => props.theme.font.family};
 `;
 
 const Section = (props) => {

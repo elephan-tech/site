@@ -9,21 +9,30 @@
     "start": "next start",
     "storybook": "start-storybook -p 6006 -c .storybook",
     "test": "jest --coverage",
-    "deploy": "git add . && git commit -m 'quick' && git push"
+    "deploy": "git add . && git commit -m 'quick' && git push",
+    "vercel": "vercel",
+    "deploy-dev": "vercel dev",
+    "gc": "./scripts/generateComponent.sh",
+    "dc": "./scripts/deleteComponent.sh",
+    "gp": "./scripts/generatePage.sh",
+    "dp": "./scripts/deletePage"
   },
   "author": "etech",
   "license": "ISC",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.27",
-    "@fortawesome/free-brands-svg-icons": "^5.12.1",
-    "@fortawesome/free-regular-svg-icons": "^5.12.1",
-    "@fortawesome/free-solid-svg-icons": "^5.12.1",
-    "@fortawesome/react-fontawesome": "^0.1.9",
+    "@fortawesome/fontawesome-svg-core": "^1.2.29",
+    "@fortawesome/free-brands-svg-icons": "^5.13.1",
+    "@fortawesome/free-regular-svg-icons": "^5.13.1",
+    "@fortawesome/free-solid-svg-icons": "^5.13.1",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "@storybook/addons": "^5.3.17",
     "@storybook/theming": "^5.3.17",
     "axios": "^0.19.2",
-    "dope-components": "^1.3.0",
-    "next": "^9.3.2",
+    "dope-components": "^1.6.0",
+    "dope-grc": "^1.1.0",
+    "font-awesome": "^4.7.0",
+    "lodash": "^4.17.19",
+    "next": "^9.4.4",
     "next-images": "^1.3.0",
     "nprogress": "^0.2.0",
     "prop-types": "^15.7.2",
@@ -31,7 +40,8 @@
     "react-dom": "^16.12.0",
     "react-lottie": "^1.2.3",
     "react-spring": "^8.0.27",
-    "styled-components": "^5.0.0"
+    "styled-components": "^5.0.0",
+    "use-dark-mode": "^2.3.1"
   },
   "devDependencies": {
     "@storybook/react": "^5.3.17"

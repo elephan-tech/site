@@ -6,6 +6,7 @@ export const InputContainer = styled.div`
   width: inherit;
   padding: ${props => props.theme.unit()};
   margin: ${props => props.theme.unit()};
+  margin-left: ${props => props.alignStart ? '0px' : props.theme.unit};
   border: 1px solid ${props => props.borderless ? 'none' : `${props.theme.palette.primary.main}50`};
   border-color: ${props => !props.error ? props.theme.palette.error : 'inherit'};
   border-radius: 5px;

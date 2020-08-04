@@ -2,9 +2,7 @@ import React from 'react'
 import Section from '../components/Section'
 
 const About = () => {
-  return (
-    'about'
-  )
+  return;
 }
 
 export default About

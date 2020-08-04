@@ -2,10 +2,7 @@ import React from 'react'
 import Section from '../components/Section';
 
 const Team = () => {
-  return (
-    'team'
-
-  )
+  return;
 }
 
 export default Team

@@ -22,7 +22,7 @@ stories
   .add('With Emojis', () => <Card>🐘💻</Card>)
   .add('With Icons', () => (<Card round style={{ background: 'black' }}>
     <Grid>
-      {icons.map((icon, i) => <Grid row><FontAwesomeIcon style={{ color: colors[i] }} icon={icon} /></Grid>)}
+      {icons.map((icon, i) => <Grid key={`icon::${icon}`} row><FontAwesomeIcon style={{ color: colors[i] }} icon={icon} /></Grid>)}
     </Grid>
   </Card>))
   .add('Round', () => <Card round alignText='center'>🐘💻</Card>)

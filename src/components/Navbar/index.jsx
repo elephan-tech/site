@@ -8,7 +8,10 @@ import { useSpring, config } from 'react-spring';
 import Grid from '../Grid';
 import Surface from '../Surface';
 import { styled } from '@storybook/theming';
-import { withTheme } from 'styled-components'
+import { withTheme } from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserCircle, faCoffee } from '@fortawesome/free-solid-svg-icons'
+
 
 
 Router.onRouteChangeStart = () => {
@@ -51,7 +54,7 @@ const Container = styled.div`
     display: flex;
 `
 
-const Header = ({ theme }) => {
+const Header = ({ theme, admin }) => {
 
   const barAnimation = useSpring({
     from: { transform: 'translate3d(0, -10rem, 0)' },
@@ -71,7 +74,7 @@ const Header = ({ theme }) => {
         <Grid align="center" row style={{ margin: `0px ${theme.unit(4)}` }}>
           <Grid noFlex><Logo /></Grid>
           <Grid row justify="flex-start">
-            {routes.map((route) => {
+            {!admin && routes.map((route) => {
               return (
                 <Link key={route.label}>
                   <Button
@@ -93,14 +96,14 @@ const Header = ({ theme }) => {
             noFlex
           >
             <Button
-              href="#Contact"
+              href={admin ? 'login' : '#Contact'}
               color={theme.palette.primary.main}
               style={{ ...linkAnimation, margin: 0 }}
               round
               fullWidth
             >
-              Contact
-              </Button>
+              {admin ? 'login' : 'Contact'}
+            </Button>
           </Grid>
         </Grid>
 

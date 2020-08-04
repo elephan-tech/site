@@ -1,6 +1,8 @@
 import styled from "styled-components"
-import { getTypographyStyle } from './utils'
+import { getTypographyStyles } from './utils'
 
-export const StyledTypography = styled.h1`
-  ${props => getTypographyStyle(props.variant)}
+const StyledTypography = styled.h1`
+  ${props => getTypographyStyles(props)}
 `
+
+export default StyledTypography

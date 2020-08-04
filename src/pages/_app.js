@@ -1,13 +1,13 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components'
-import theme, { darkTheme } from '../styles/theme'
+import etTheme, { darkTheme } from '../theme'
 
 export default function MyApp({ Component, pageProps }) {
   const darkMode = false;
-  console.log('🙆‍♂️', pageProps)
+  const theme = darkMode ? darkTheme : etTheme
   return (
-    <ThemeProvider theme={darkMode ? darkTheme : theme}>
-      <Component {...pageProps} />
+    <ThemeProvider theme={theme}>
+      <Component {...pageProps} theme={theme} />
     </ThemeProvider>
   )
 }

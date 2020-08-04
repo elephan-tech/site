@@ -1,16 +1,23 @@
 import React from 'react'
-import PropTypes, { arrayOf, oneOf } from 'prop-types'
+import { oneOf } from 'prop-types'
+import StyledTypography from './styles'
 
-const Typography = (props) => {
-  return (c
-    <StyledTypography color={props.color}>
-      {props.children}
+const Typography = ({ color, variant, children }) => {
+  return (
+    <StyledTypography variant={variant} color={color}>
+      {children}
     </StyledTypography>
   )
 }
 
+Typography.defaultProps = {
+  variant: 'h2',
+  color: 'black'
+}
+
 Typography.propTypes = {
-  variant: oneOf(['h1, h2, h3, h4, h5, h6, button, overline, body, subtitle, caption, code, quote'])
+  variant: oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'button', 'overline', 'body', 'subtitle', 'caption', 'code', 'quote']),
+  color: oneOf(['accent', 'secondary', 'primary', 'black', 'white'])
 }
 
 export default Typography
