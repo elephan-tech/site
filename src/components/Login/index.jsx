@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import StyledLogin, { IconWrapper, Container, LoginFab, FabButton, Modal } from './styles.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
-import { Expand } from '../../animations'
-
 
 const Login = () => {
 

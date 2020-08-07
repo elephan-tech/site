@@ -1,19 +1,19 @@
 import React from 'react'
 import sections from '../sections'
-import Page from '../components/Page'
-import { Section, Login } from '../components'
+import { Section, Page } from '../containers'
+import { Login } from '../components'
 
-export default (props) => (
+export default (props) => console.log({ props }) || (
   <>
-    <Page>
-      {sections.map(({ RenderSection, title }) => {
-        const hasContent = RenderSection();
-        return (
-          hasContent &&
-          <Section id={title} key={title} title={title}>
-            <RenderSection {...props} />
-          </Section>)
-      })}
+    <Page {...props}>
+      {sections.map(({ render, title }) => (render &&
+        <Section
+          id={title}
+          key={title}
+          title={title}
+        >
+          {render(props)}
+        </Section>))}
     </Page>
     <Login />
   </>

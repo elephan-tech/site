@@ -35,10 +35,9 @@ const theme = {
     info: '#23b4bd'
   },
   dimensions: {
-    maxWidth: '1000px',
-  },
-  breakpoints: {
-
+    sm: { flexDirection: 'column' },
+    md: { flexDirection: 'column' },
+    lg: { flexDirection: 'row' }
   },
   shadow: (v) => `5px ${v ? (v * 10) : 10}px 10px 0px ${theme.palette.secondary.dark}50`
 }

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "next -- -p 3001",
     "build": "next build",
     "start": "next start",
     "storybook": "start-storybook -p 6006 -c .storybook",
@@ -25,6 +25,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.13.1",
     "@fortawesome/free-solid-svg-icons": "^5.13.1",
     "@fortawesome/react-fontawesome": "^0.1.11",
+    "@ionic/react": "^5.3.1",
     "@storybook/addons": "^5.3.17",
     "@storybook/theming": "^5.3.17",
     "axios": "^0.19.2",
