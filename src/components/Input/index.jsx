@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import PropTypes, { object, string, array } from 'prop-types'
+import PropTypes, { object, string, array, any } from 'prop-types'
 import {
   InputContainer,
   StyledInput,
@@ -21,7 +21,8 @@ const Input = ({
   borderless,
   alignStart,
   name,
-  onChange
+  onChange,
+  value
 }
 ) => {
 
@@ -42,14 +43,10 @@ const Input = ({
     setPattern(validator[validatorType].regex || /./)
   }, [variant])
 
-  const handleChange = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
+  const validate = () => {
     const validatorType = variant.toLowerCase()
     const isValid = e.target.value.length !== 0 ? pattern.test(e.target.value) : false
     setError({ valid: isValid, message: validator[validatorType].message || 'Cannot be blank' })
-    console.log({ e, fg: e.target.value })
-    onChange(e);
   }
 
   const renderAs = variant === 'message' ? { as: 'textarea', rows: 5, cols: 33 } : { as: 'input' };
@@ -61,7 +58,7 @@ const Input = ({
       <Label>{label}</Label>
       <InputContainer error={valid} borderless={borderless} alignStart={alignStart}>
         <StyledIcon>{startIcon && startIcon}</StyledIcon>
-        <StyledInput {...renderAs} type={variant} name={name} placeholder={placeholder} pattern={pattern} onChange={handleChange} />
+        <StyledInput {...renderAs} value={value} type={variant} name={name} placeholder={placeholder} pattern={pattern} onChange={onChange} />
         <StyledIcon>{endIcon && endIcon}</StyledIcon>
       </InputContainer>
       {!valid && <ErrorMessage> {errorMessage || message}</ErrorMessage>}
@@ -71,6 +68,7 @@ const Input = ({
 }
 
 Input.propTypes = {
+  value: any.isRequired,
   label: string.isRequired,
   variant: PropTypes.oneOf(['text', 'tel', 'password', 'email', 'number', 'message']).isRequired,
   hint: string,
@@ -78,7 +76,7 @@ Input.propTypes = {
   errorMessage: string,
   startIcon: PropTypes.oneOfType([string, object, array]),
   endIcon: PropTypes.oneOfType([string, object, array]),
-  onChange: PropTypes.func.isRequired
+  data: PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.bool])
 };
 
 export default Input

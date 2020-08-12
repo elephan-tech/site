@@ -3,8 +3,9 @@ import Lottie from 'react-lottie'
 
 const Graphic = (props) => {
 
-  const { animationData, loop, autoplay, settings, isStopped = false, isPaused = false } = props;
+  const { animationData, loop, autoplay, settings, isStopped = false, isPaused = false, height, width } = props;
 
+  console.log(animationData, settings, height, width)
   const options = {
     loop,
     autoplay,
@@ -27,8 +28,8 @@ const Graphic = (props) => {
   return (
     <Lottie
       options={options || defaultOptions}
-      height={400}
-      width={400}
+      height={height}
+      width={width}
       isStopped={isStopped}
       isPaused={isPaused}
     />

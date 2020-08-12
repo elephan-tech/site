@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: row;
-  width: inherit;
+  width: 100%;
   padding: ${props => props.theme.unit()};
   margin: ${props => props.theme.unit()};
   margin-left: ${props => props.alignStart ? '0px' : props.theme.unit};
@@ -25,9 +25,10 @@ export const StyledInput = styled.input`
 input[type="number"] {
     -moz-appearance: textfield;
 }
+color: black;
 background: none;
 height: ${props => props.type === 'message' && props.theme.unit(10)};
-width: inherit;
+width: 100%;
 flex-grow: 1;
 border: none;
 font-size: ${props => props.theme.font.size.main};
@@ -63,7 +64,7 @@ font-size: ${props => props.theme.font.size.medium};
 export const InputComponent = styled.div`
 font-size: ${props => props.theme.font.size.main};
   font-family: ${props => props.theme.font.family};
-width: inherit;
+width: 100%;
 display: flex;
 flex-direction: column;
 align-items: flex-start;

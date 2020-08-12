@@ -1,15 +1,18 @@
 const typographies = {
-  h1: [44, 500],
-  h2: [36, 500],
-  h3: [30, 500],
-  subtitle: [12, 300],
-  body: [18, 500],
+  h1: { fontSize: 44, fontWeight: 500, lineHeight: 1.5 },
+  h2: { fontSize: 36, fontWeight: 500, lineHeight: 1 },
+  h3: { fontSize: 30, fontWeight: 500, lineHeight: 1 },
+  h4: { fontSize: 26, fontWeight: 500, lineHeight: 1 },
+  h5: { fontSize: 20, fontWeight: 500, lineHeight: 1 },
+  h6: { fontSize: 14, fontWeight: 500, lineHeight: 2 },
+  subtitle: { fontSize: 12, fontWeight: 300, lineHeight: 1 },
+  p: { fontSize: 18, fontWeight: 400, lineHeight: 1.5 },
 }
 
-export const getTypographyStyles = ({ variant, theme, color }) => {
+export const getTypographyStyles = ({ variant, theme, color = "primary", shade }) => {
   const { palette } = theme;
-  const fontColor = typeof palette[color] === 'string' ? palette[color] : palette[color].main
-  const [fontSize, fontWeight] = typographies[variant] && typographies[variant];
-  return `font-size: ${fontSize}px; font-weight:${fontWeight}; color: ${fontColor || 'black'};`;
+  const fontColor = typeof palette[color] === 'string' ? palette[color] : palette[color][shade || 'main']
+  const { fontSize, fontWeight, lineHeight } = typographies[variant || 'h2'];
+  return `font-size: ${fontSize}px; font-weight:${fontWeight}; color: ${fontColor || 'black'}; line-height: ${lineHeight}`;
 
 }

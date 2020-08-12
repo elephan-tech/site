@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import etLogo from '../public/etLogo.svg'
+import etLogo from '../public/logos/etLogo.svg'
 
 
 const Meta = ({ title, description }) => {
@@ -13,7 +13,7 @@ const Meta = ({ title, description }) => {
       <meta name="description" content={description} />
       <meta name="og:title" property="og:title" content={`ElephanTech - ${title || 'home'}`} />
       <meta name="og:description" property="og:description" content={description} />
-      <meta name="og:image" property="og:image" content="/static/etLogo.png" />
+      <meta name="og:image" property="og:image" content={etLogo} />
     </Head>
   )
 }

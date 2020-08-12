@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import StyledLogin, { IconWrapper, Container, LoginFab, FabButton, Modal } from './styles.js';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { IonIcon } from '../index.js';
+import { personCircleOutline } from 'ionicons/icons';
 
 const Login = () => {
 
@@ -27,7 +27,7 @@ const Login = () => {
       <Container>
         <FabButton {...mouseProps} href={'./login'} visible={visible}>
           <IconWrapper>
-            <FontAwesomeIcon style={svgStyles} size="xs" icon={faUserCircle} />
+            <IonIcon slot="icon-only" icon={personCircleOutline} />
           </IconWrapper>
         </FabButton>
       </Container>
