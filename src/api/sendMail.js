@@ -1,12 +1,5 @@
 import axios from 'axios';
 
-const url = "https://us-central1-elephantech-node.cloudfunctions.net/sendMail"
-
-const sendMail = async (data) => {
-  console.log(data)
-  const t = await axios.post(url, data);
-  console.log(t)
-  return t;
-}
+const sendMail = async (data) => console.log({ data }) || await axios.post(process.env.MAIL_URL, { body: data });
 
 export default sendMail;
