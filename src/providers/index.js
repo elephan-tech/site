@@ -1,1 +1,1 @@
-export { default as WindowDimensions } from './WindowDimensions';
+export { default as AppState } from './AppState';
