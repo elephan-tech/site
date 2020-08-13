@@ -1,10 +1,10 @@
 const typographies = {
-  h1: { fontSize: 44, fontWeight: 500, lineHeight: 1.5 },
-  h2: { fontSize: 36, fontWeight: 500, lineHeight: 1 },
-  h3: { fontSize: 30, fontWeight: 500, lineHeight: 1 },
-  h4: { fontSize: 26, fontWeight: 500, lineHeight: 1 },
+  h1: { fontSize: 44, fontWeight: 900, lineHeight: 1.5 },
+  h2: { fontSize: 36, fontWeight: 800, lineHeight: 1 },
+  h3: { fontSize: 30, fontWeight: 700, lineHeight: 1 },
+  h4: { fontSize: 26, fontWeight: 600, lineHeight: 1 },
   h5: { fontSize: 20, fontWeight: 500, lineHeight: 1 },
-  h6: { fontSize: 14, fontWeight: 500, lineHeight: 2 },
+  h6: { fontSize: 14, fontWeight: 400, lineHeight: 2 },
   subtitle: { fontSize: 12, fontWeight: 300, lineHeight: 1 },
   p: { fontSize: 18, fontWeight: 400, lineHeight: 1.5 },
 }

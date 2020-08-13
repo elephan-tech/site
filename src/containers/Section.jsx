@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'styled-components';
+import { IonGrid, IonRow, Center } from '../components'
 
 const SectionStyle = styled.div`
-    min-height: calc(80vh);
+    min-height: calc(90vh);
     display: flex;
     flex-grow: 1;
     flex-direction: column;
     align-content: center;
-    padding: ${props => props.theme.unit(3)};
+    padding: ${props => props.theme.unit(2)};
     /* margin: ${props => props.theme.unit(3)}; */
     background: ${props => props.theme.palette.background};
     background-image: ${props => props.backgroundImage};
@@ -19,7 +20,13 @@ const SectionStyle = styled.div`
 const Section = (props) => {
   return (
     <SectionStyle {...props}>
-      {props.children}
+      <IonGrid ionGridPadding={props.theme.unit(3)} fixed id={props.title} style={{ display: 'flex', marginTop: 50 }}>
+        <IonRow></IonRow>
+        <IonRow class="ion-align-items-center">
+          {props.children}
+        </IonRow>
+        <IonRow></IonRow>
+      </IonGrid>
     </SectionStyle>
   )
 }

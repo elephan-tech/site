@@ -5,7 +5,7 @@ const Graphic = (props) => {
 
   const { animationData, loop, autoplay, settings, isStopped = false, isPaused = false, height, width } = props;
 
-  console.log(animationData, settings, height, width)
+  console.log({ animationData, settings, height, width })
   const options = {
     loop,
     autoplay,
@@ -16,12 +16,15 @@ const Graphic = (props) => {
     }
   }
 
+  console.log(options)
   const defaultOptions = {
     loop: true,
     autoplay: true,
     animationData: {},
     rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice'
+      preserveAspectRatio: 'xMidYMid meet',
+      hideOnTransparent: true,
+      clearCanvas: true
     }
   };
 

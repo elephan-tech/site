@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default ({ size, margin, theme }) => {
+export default ({ size, margin, theme, children }) => {
 
   const dimensions = {
     'xs': { height: '30px', width: '30px' },
@@ -35,5 +35,5 @@ export default ({ size, margin, theme }) => {
       />
     </svg>)
 
-  return (<div style={{ ...dimensions, ...style }}><ElephantechLogo /></div>)
+  return (<div style={{ ...dimensions, ...style }}>{children || <ElephantechLogo />}</div>)
 }

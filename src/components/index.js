@@ -1,6 +1,4 @@
 import dynamic from 'next/dynamic';
-import { reduce, forEach } from 'lodash';
-
 
 export const IonContent = dynamic(async () => (await import('@ionic/react')).IonContent, { ssr: false });
 export const IonApp = dynamic(async () => (await import('@ionic/react')).IonApp, { ssr: false });
@@ -46,3 +44,6 @@ export { default as Center } from './Center';
 export { default as Flex } from './Flex';
 export { default as Typography } from './Typography';
 export { default as Surface } from './Surface';
+export { default as ContactForm } from './ContactForm';
+export { default as Icon } from './Icon';
+

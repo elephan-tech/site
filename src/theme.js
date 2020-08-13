@@ -11,7 +11,7 @@ const theme = (dark) => ({
       bigger: '24px',
       giant: '30px'
     },
-    family: 'Futura, sans-serif',
+    family: 'Mulish, Futura, sans-serif',
   },
   palette: {
     primary: {
@@ -22,7 +22,7 @@ const theme = (dark) => ({
     secondary: {
       main: !dark ? '#C4C4C4' : '#004554',
       light: !dark ? '#f7f7f7' : '#3a7080',
-      dark: !dark ? '#4f5b62' : '#357081',
+      dark: !dark ? '#242424' : '#357081',
     },
     accent: {
       main: !dark ? '#65AD8F' : '#23b4bd',

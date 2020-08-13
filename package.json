@@ -14,17 +14,22 @@
     "gc": "./scripts/generateComponent.sh",
     "dc": "./scripts/deleteComponent.sh",
     "gp": "./scripts/generatePage.sh",
-    "dp": "./scripts/deletePage"
+    "dp": "./scripts/deletePage",
+    "db-deploy": "firebase deploy",
+    "deploy-fn": "firebase deploy --only functions"
   },
   "author": "etech",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.11.1",
     "@ionic/react": "^5.3.1",
     "@ionic/react-router": "^5.3.1",
     "@zeit/next-css": "^1.0.1",
     "axios": "^0.19.2",
     "dope-components": "^1.6.0",
     "dope-grc": "^1.1.0",
+    "dotenv": "^8.2.0",
+    "dotenv-webpack": "^2.0.0",
     "firebase": "^7.17.2",
     "ionicons": "^5.1.2",
     "lodash": "^4.17.19",

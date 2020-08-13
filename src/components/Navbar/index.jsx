@@ -30,8 +30,8 @@ const Header = (props) => {
 
   return (
     <Container>
-      <Nav raised>
-        <Grid align="center" row style={{ margin: `0px ${theme.unit(4)}` }}>
+      <Nav raised noMargin={small}>
+        <Grid align="center" row style={{ margin: `0px ${theme.unit(small ? 0 : 3)}` }}>
           <Grid row justify="flex-start">
             <Link href="/"><a><Logo theme={theme} size="s" /></a></Link>
           </Grid>
@@ -43,29 +43,30 @@ const Header = (props) => {
           >
             {!admin && routes.map((route) => {
               return (
-                <StyledLink key={route.label}>
-                  <Button
-                    variant='text'
-                    href={route.url}
-                    color={theme.palette.accent.main}
-                  >
-                    {route.label}
-                  </Button>
-                </StyledLink>
+                <Button
+                  key={route.url}
+                  variant='text'
+                  href={route.url}
+                  color={theme.palette.accent.main}
+                >
+                  {route.label}
+                </Button>
               )
             })}
-            <Button
+            {!small ? <Button
               href={admin ? 'login' : '#Contact'}
               color={theme.palette.primary.main}
               style={{ margin: 0 }}
               round
               fullWidth
             >
-              {small ? (<IonIcon slot="icon-only" icon={caretDown} />) : admin ? 'login' : 'Contact'}
-            </Button>
-            {!small && <Button variant="text" onClick={toggleMenu} color={theme.palette.primary.main}>
-              <IonIcon slot="icon-only" icon={ellipsisVertical} />
-            </Button>}
+              {admin ? 'login' : 'Contact'}
+            </Button> :
+              (<Button variant="text" onClick={toggleMenu} color={theme.palette.primary.main}>
+                <IonIcon slot="icon-only" icon={ellipsisVertical} />
+              </Button>)
+            }
+
           </Grid>
         </Grid>
       </Nav>

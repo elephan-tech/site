@@ -1,5 +1,17 @@
-import axios from 'axios';
+import { axios, db } from '../firebase/firebaseConfig'
 
-const sendMail = async (data) => console.log({ data }) || await axios.post(process.env.MAIL_URL, { body: data });
-
-export default sendMail;
+const sendEmail = () => {
+  axios.post(process.env.MAIL_URL, formData).then(res => {
+    console.log({ res })
+    db.collection('clients').add({
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+      time: new Date(),
+    })
+  })
+    .catch(error => {
+      console.log(error)
+    })
+}
+export default sendEmail;
