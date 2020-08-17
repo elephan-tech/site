@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 const pay = () => {
   return (
     <div>
       pay here
     </div>
-  )
-}
+  );
+};
 
-export default pay
+export default pay;

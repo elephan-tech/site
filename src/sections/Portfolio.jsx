@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react'
-import { Section, Typography, Grid, Card } from '../components'
-import FakeText from '../components/FakeText';
-import { Button } from 'dope-components';
+// import React, { Fragment } from 'react';
+// import { Section, Typography, Grid, Card } from '../components';
+// import FakeText from '../components/FakeText';
+// import { Button } from 'dope-components';
 
 const Portfolio = () => null;
 // {
@@ -50,4 +50,4 @@ const Portfolio = () => null;
 //   );
 // }
 
-export default Portfolio
+export default Portfolio;

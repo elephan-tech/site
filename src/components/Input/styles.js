@@ -1,9 +1,10 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
+
 
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: row;
-  width: inherit;
+  width: 100%;
   padding: ${props => props.theme.unit()};
   margin: ${props => props.theme.unit()};
   margin-left: ${props => props.alignStart ? '0px' : props.theme.unit};
@@ -15,7 +16,7 @@ export const InputContainer = styled.div`
   &:active, &:focus, &:hover{
     border: 1px solid ${props => props.borderless ? 'none' : `${props.theme.palette.primary.main}`};
   }
-`
+`;
 export const StyledInput = styled.input`
   ::-webkit-outer-spin-button,
   ::-webkit-inner-spin-button {
@@ -25,45 +26,46 @@ export const StyledInput = styled.input`
 input[type="number"] {
     -moz-appearance: textfield;
 }
+color: black;
 background: none;
 height: ${props => props.type === 'message' && props.theme.unit(10)};
-width: inherit;
+width: 100%;
 flex-grow: 1;
 border: none;
-font-size: ${props => props.theme.font.size.main};
+font-size: ${props => props.theme.font.size.big};
 font-family: ${props => props.theme.font.family};
 resize: none;
-padding: 0 ${ props => props.theme.unit()};
+padding: 0 ${props => props.theme.unit()};
   &:focus, &:active{
   outline: none;
 }
 `;
 
 export const StyledIcon = styled.div`
-  min-height: 19px;
-  min-width: 14px;
+  min-height: 100%;
   text-align: left;
+  align-self: center;
   color: ${props => props.theme.palette.secondary.dark};
-`
+`;
 
 export const Label = styled.label`
 color: ${ props => props.theme.palette.primary.dark};
 margin: 0px ${props => props.theme.unit()};
-`
+`;
 
 export const ErrorMessage = styled(Label)`
 color: ${ props => props.theme.palette.error};
 font-size: ${props => props.theme.font.size.small};
-`
+`;
 
 export const Hint = styled(Label)`
 color: ${ props => props.theme.palette.secondary.main};
 font-size: ${props => props.theme.font.size.medium};
-`
+`;
 export const InputComponent = styled.div`
 font-size: ${props => props.theme.font.size.main};
   font-family: ${props => props.theme.font.family};
-width: inherit;
+width: 100%;
 display: flex;
 flex-direction: column;
 align-items: flex-start;

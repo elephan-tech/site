@@ -1,8 +1,6 @@
-import React from 'react'
-import { Section, Typography, Grid, Card, Page } from '../components'
-import { Button } from 'dope-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPortrait, faBriefcase } from '@fortawesome/free-solid-svg-icons'
+import React from 'react';
+import { Section, Typography, Grid, Page, IonCard } from '../components';
+import { Button } from 'dope-components';
 
 const admin = ({ user }) => {
   return (
@@ -11,9 +9,9 @@ const admin = ({ user }) => {
         <Typography>{user || 'Admin'}</Typography>
         <Grid row>
           <Grid column>
-            <Card round>
+            <IonCard round>
               <Button size="large" variant="text">start job</Button>
-            </Card>
+            </IonCard>
           </Grid>
           <Grid column>
             hello
@@ -21,7 +19,7 @@ const admin = ({ user }) => {
         </Grid>
       </Section>
     </Page>
-  )
-}
+  );
+};
 
-export default admin
+export default admin;

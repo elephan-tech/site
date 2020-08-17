@@ -1,13 +1,18 @@
-import React, { useState, useEffect } from 'react'
-import getFillerData from '../api/getFillerData'
+import React, { useState, useEffect } from 'react';
+import getFillerData from '../api/getFillerData';
+import { number } from 'prop-types';
 
 const FakeText = ({ paragraphs }) => {
 
   const [fakeText, setFakeText] = useState('');
 
-  useEffect(() => { getFillerData({ paragraphs }).then((res) => setFakeText(res)) }, []);
+  useEffect(() => { getFillerData({ paragraphs }).then((res) => setFakeText(res)); }, []);
 
-  return <div>{fakeText}</div>
-}
+  return <div>{fakeText}</div>;
+};
 
-export default FakeText
+
+FakeText.propTypes = {
+  paragraphs: number
+};
+export default FakeText;

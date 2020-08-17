@@ -1,29 +1,24 @@
-import React from 'react'
+import React from 'react';
 import { Button } from 'dope-components';
-import { faUserCircle, faKey } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Logo, Section, Grid, Card, Input } from '../components'
+import { Logo, Section, Grid, Input, IonCard, IonIcon } from '../components';
+import { keyOutline, personCircle } from 'ionicons/icons';
 
-const login = (props) => {
+const Login = () => {
 
-  const Icon = ({ icon }) => {
-
-    return <FontAwesomeIcon icon={icon} />
-  }
   return (
     <Section>
       <Grid className="login" justify="center" align="center">
         <Logo />
-        <Card>
+        <IonCard>
           <Grid column>
-            <Input label="username" startIcon={<Icon icon={faUserCircle} />} variant="text" onChange={e => console.log(e)} />
-            <Input label="password" startIcon={<Icon icon={faKey} />} variant="password" onChange={e => console.log(e)} />
+            <Input label="username" startIcon={<IonIcon icon={personCircle} />} type="text" onChange={e => console.log(e)} />
+            <Input label="password" startIcon={<IonIcon icon={keyOutline} />} type="password" onChange={e => console.log(e)} />
             <Button fullWidth color='red'>login</Button>
           </Grid>
-        </Card>
+        </IonCard>
       </Grid>
     </Section>
-  )
-}
+  );
+};
 
-export default login
+export default Login;

@@ -1,29 +1,72 @@
-import React from 'react'
-import { Section, Grid, Typography } from '../components'
-import Graphic from '../components/Graphic'
-import programming from '../lotties/programming.json'
-import ContactForm from './Contact/components/ContactForm'
+import React, { useState } from 'react';
+import { object } from 'prop-types';
+import styled from 'styled-components';
+import { Center, Graphic, IonCol, Title, Typography, Input, IonButton, IonIcon } from '../components';
+import { atOutline } from 'ionicons/icons';
+import code from '../public/lotties/code.json';
 
-const Landing = (props) => {
+
+const EmailCapture = () => {
+
+  const [userEmail, setUserEmail] = useState('');
+  const handleEmail = (e) => setUserEmail(e.target.value);
+  const addContact = (e) => console.log('adding contact', e.currentTarget, userEmail);
+
   return (
-    <Section>
-      <Grid row>
-        <Grid spacing={1} itemSpacing='space-between'>
-          <Typography color="primary" variant="h1">Hello there,</Typography>
-          <Typography variant="body">we are working hard to build Elephantech's home... <br /> big things coming soon 😉</Typography>
-          <Typography variant="subtitle">In the mean time feel free to leave us a message and well get back to you</Typography>
-          <ContactForm theme={props && props.theme} />
-        </Grid>
-        <Grid noFlex>
-          <Graphic
-            animationData={programming}
-            autoplay
-            loop
-          />
-        </Grid>
-      </Grid>
-    </Section>
-  )
-}
+    <Input
+      placeholder="email@business.com"
+      startIcon={<IonButton fill="clear" mode="ios" slot="icon-only"><IonIcon icon={atOutline} /></IonButton>}
+      value={userEmail}
+      onChange={handleEmail}
+      type="email"
+      action={addContact}
+      actionLabel="Let's Talk"
+      alignStart
+    />
+  );
+};
 
-export default Landing
+const Home = (props) => {
+
+  const { state: { screen } } = props;
+
+  const lottieSettings = {
+    viewBoxSize: '200 0 750 900'
+  };
+
+  const StyledCol = styled(IonCol)`
+  display: flex;
+  align-self: center;
+  flex-direction: ${screen === 'small' ? 'column' : 'row'};
+  `;
+
+  return (
+    <>
+      <StyledCol>
+        <Graphic
+          animationData={code}
+          height="500px"
+          width="500px"
+          autoplay
+          settings={lottieSettings}
+        />
+        <Center direction="column" style={{ width: '100%' }}>
+          <Title>Lets bring your business to the next level</Title>
+          <Typography color="contrast" variant="p">
+            We are a Software Development company with a focus on Progressive Web Apps.
+            We enjoy taking on big data projects and deliver useful software.
+            We put our main focus as a company on stakeholder satisfaction and delivery of awesome software systems
+          </Typography>
+          <EmailCapture />
+        </Center>
+      </StyledCol>
+    </>
+  );
+};
+
+Home.propTypes = {
+  state: object,
+  theme: object
+};
+
+export default Home;

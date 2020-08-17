@@ -1,21 +1,16 @@
-import React from 'react'
-import sections from '../sections'
-import Page from '../components/Page'
-import { Section, Login } from '../components'
+import React from 'react';
+import sections from '../sections';
+import { Section, Page } from '../containers';
 
-export default (props) => (
-  <>
-    <Page>
-      {sections.map(({ RenderSection, title }) => {
-        const hasContent = RenderSection();
-        return (
-          hasContent &&
-          <Section id={title} key={title} title={title}>
-            <RenderSection {...props} />
-          </Section>)
-      })}
-    </Page>
-    <Login />
-  </>
-);
+const Index = (props) => {
+  return (
+    <>
+      <Page {...props}>
+        {sections.map(({ renderSection, title }) => (renderSection(props) && <Section {...props} key={title} title={title}>{renderSection(props)}</Section>))}
+      </Page>
+    </>
+  );
+};
 
+
+export default Index;
