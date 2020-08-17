@@ -1,13 +1,13 @@
-import About from './About'
-import Team from './Team'
-import Portfolio from './Portfolio'
-import Home from './Home'
+import About from './About';
+import Services from './Services';
+import Portfolio from './Portfolio';
+import Home from './Home';
 import Contact from './Contact';
 
 export default [
-  { render: Home, title: 'Home' },
-  { render: Team, title: 'Team' },
-  { render: About, title: 'About' },
-  { render: Portfolio, title: 'Portfolio' },
-  { render: Contact, title: 'Contact' },
+  { renderSection: Home, title: 'Home' },
+  { renderSection: About, title: 'About' },
+  { renderSection: Services, title: 'Services' },
+  { renderSection: Portfolio, title: 'Portfolio' },
+  { renderSection: Contact, title: 'Contact' },
 ];
