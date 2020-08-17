@@ -12,6 +12,7 @@
     "vercel": "vercel",
     "deploy-dev": "vercel dev",
     "lint": "eslint --fix src/**/**/*.js src/**/**/*.jsx",
+    "lint": "eslint --fix src/**/*.js src/**/*.jsx",
     "gc": "./scripts/generateComponent.sh",
     "dc": "./scripts/deleteComponent.sh",
     "gp": "./scripts/generatePage.sh",

@@ -1,4 +1,4 @@
-import { axios, db } from '../firebase/firebaseConfig';
+// import { axios, db } from '../firebase/firebaseConfig';
 
 const sendEmail = (formData) => {
   console.log(formData);

@@ -1,8 +1,7 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { Button } from 'dope-components';
 import { ThemeContext } from 'styled-components';
 import {
-  Card,
   Input,
   IonIcon,
 } from '..';
