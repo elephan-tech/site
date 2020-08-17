@@ -1,31 +1,36 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { withTheme } from 'styled-components';
 import { Button } from 'dope-components';
 import {
-  caretDown,
-  moon,
-  sunny,
   ellipsisVertical
 } from 'ionicons/icons';
 import { IonIcon } from '..';
 import Grid from '../Grid';
 import Logo from '../Logo';
-import { Container, Nav, StyledLink } from './styles';
+import { Container, Nav } from './styles';
+import { object, bool, func } from 'prop-types';
 
 const routes = [
   { label: 'About Elephantech', url: '#About' },
-  { label: 'Our Services', url: '#Team' },
+  { label: 'Our Services', url: '#Services' },
 ];
 
 
 const Header = (props) => {
 
-  const { theme, admin, dispatch, state, setDarkMode } = props
-  const { screen } = state
+  const {
+    theme,
+    admin,
+    // dispatch,
+    state,
+    // setDarkMode
+  } = props;
+  const { screen } = state;
 
-  const toggleDarkMode = () => dispatch({ type: "TOGGLE_DARK_MODE" });
-  const toggleMenu = () => console.log('hello')
+  // const toggleDarkMode = () => dispatch({ type: 'TOGGLE_DARK_MODE' });
+
+  const toggleMenu = () => console.log('hello');
   const small = screen.device === 'phone' || screen.device === 'tablet';
 
   return (
@@ -51,7 +56,7 @@ const Header = (props) => {
                 >
                   {route.label}
                 </Button>
-              )
+              );
             })}
             {!small ? <Button
               href={admin ? 'login' : '#Contact'}
@@ -71,8 +76,15 @@ const Header = (props) => {
         </Grid>
       </Nav>
     </Container >
-  )
-}
+  );
+};
 
+Header.propTypes = {
+  theme: object,
+  admin: bool,
+  dispatch: func,
+  state: object,
+  setDarkMode: func,
+};
 
-export default withTheme(Header)
+export default withTheme(Header);

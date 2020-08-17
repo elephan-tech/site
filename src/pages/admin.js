@@ -1,8 +1,6 @@
-import React from 'react'
-import { Section, Typography, Grid, Card, Page, IonCard } from '../components'
-import { Button } from 'dope-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPortrait, faBriefcase } from '@fortawesome/free-solid-svg-icons'
+import React from 'react';
+import { Section, Typography, Grid, Page, IonCard } from '../components';
+import { Button } from 'dope-components';
 
 const admin = ({ user }) => {
   return (
@@ -21,7 +19,7 @@ const admin = ({ user }) => {
         </Grid>
       </Section>
     </Page>
-  )
-}
+  );
+};
 
-export default admin
+export default admin;

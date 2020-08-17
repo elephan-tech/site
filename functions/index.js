@@ -44,7 +44,7 @@ exports.sendMail = functions.https.onRequest((req, res) => cors(req, res, () => 
     };
 
     return transporter.sendMail(mailOptions).then(() => {
-      console.log('New email sent to:', gmailEmail)
+      console.log('New email sent to: team@elephan.tech')
       res.status(200).send({
         isEmailSend: true,
         message: 'Message sent!',

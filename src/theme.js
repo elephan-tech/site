@@ -20,9 +20,9 @@ const theme = (dark) => ({
       dark: !dark ? '#004554' : '#000a12'
     },
     secondary: {
-      main: !dark ? '#C4C4C4' : '#004554',
+      main: !dark ? '#a8acb9' : '#004554',
       light: !dark ? '#f7f7f7' : '#3a7080',
-      dark: !dark ? '#242424' : '#357081',
+      dark: !dark ? '#4F5362' : '#357081',
     },
     accent: {
       main: !dark ? '#65AD8F' : '#23b4bd',

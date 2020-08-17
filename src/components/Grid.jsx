@@ -1,5 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
+import { any, bool, number, string, object } from 'prop-types';
 
 const Grid = ({
   children,
@@ -25,10 +26,24 @@ const Grid = ({
     margin: 0px ${({ theme }) => noMargin ? '0px' : theme.unit()};
     padding: ${({ theme }) => pad && theme.unit()};
     width: ${noFlex ? '' : '-webkit-fill-available'};
-  `
-  return <StyledGrid style={style} children={children} />
+  `;
+  return <StyledGrid style={style}>{children}</StyledGrid>;
 
-}
+};
 
-export default Grid
+Grid.propTypes = {
+  children: any,
+  row: bool,
+  spacing: number,
+  align: string,
+  justify: string,
+  pad: bool,
+  noFlex: bool,
+  style: object,
+  itemSpacing: number,
+  hide: bool,
+  noMargin: bool,
+};
+
+export default Grid;
 

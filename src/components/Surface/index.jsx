@@ -1,5 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
+import { any } from 'prop-types';
 
 const StyledSurface = styled.div`
     font-family: ${(props) => props.theme.font.family};
@@ -11,8 +12,11 @@ const StyledSurface = styled.div`
     text-align: start;
     background: ${(props) => props.theme.palette.background};
     cursor: ${({ onClick }) => onClick ? 'pointer' : 'default'};
-`
+`;
 
-export default (props) => <StyledSurface {...props}>{props.children}</StyledSurface>
+const Surface = (props) => <StyledSurface {...props}>{props.children}</StyledSurface>;
 
+Surface.propTypes = { children: any };
+
+export default Surface;
 

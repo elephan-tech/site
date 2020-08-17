@@ -1,15 +1,14 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
-import { IonGrid, IonRow, Center } from '../components'
+import { IonGrid, IonRow } from '../components';
+import { any, string } from 'prop-types';
 
 const SectionStyle = styled.div`
-    min-height: calc(90vh);
     display: flex;
     flex-grow: 1;
     flex-direction: column;
     align-content: center;
     padding: ${props => props.theme.unit(2)};
-    /* margin: ${props => props.theme.unit(3)}; */
     background: ${props => props.theme.palette.background};
     background-image: ${props => props.backgroundImage};
     background-repeat: no-repeat;
@@ -17,18 +16,26 @@ const SectionStyle = styled.div`
     font-family: ${props => props.theme.font.family};
 `;
 
+const StyledGrid = styled(IonGrid)`
+  display: flex;
+`;
+
 const Section = (props) => {
+  const { children, title } = props;
   return (
     <SectionStyle {...props}>
-      <IonGrid ionGridPadding={props.theme.unit(3)} fixed id={props.title} style={{ display: 'flex', marginTop: 50 }}>
-        <IonRow></IonRow>
+      <StyledGrid fixed id={title} style={{ display: 'flex' }}>
         <IonRow class="ion-align-items-center">
-          {props.children}
+          {children}
         </IonRow>
-        <IonRow></IonRow>
-      </IonGrid>
+      </StyledGrid>
     </SectionStyle>
-  )
-}
+  );
+};
 
-export default Section
+Section.propTypes = {
+  children: any,
+  title: string
+};
+
+export default Section;

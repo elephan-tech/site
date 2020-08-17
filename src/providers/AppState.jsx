@@ -12,25 +12,25 @@ const getScreenInfo = (payload) => {
   ];
 
   return breakpoints.reduce((acc, { from, to, device, col, size }) => {
-    const info = inRange(payload, from, to) ? { size, device, col, px: payload } : {}
-    return { ...acc, ...info }
+    const info = inRange(payload, from, to) ? { size, device, col, px: payload } : {};
+    return { ...acc, ...info };
   }, {});
 
-}
+};
 
 export const reducer = (state, { type, payload }) => {
-  console.log({ type, payload })
   switch (type) {
-    case "TOGGLE_DARK_MODE":
-      console.log(state.dark)
-      return { ...state, dark: !state.dark }
-    case "SET_DIMENSION":
+    case 'TOGGLE_DARK_MODE': {
+      return { ...state, dark: !state.dark };
+    }
+    case 'SET_DIMENSION': {
       const screen = getScreenInfo(payload);
-      return { ...state, screen }
+      return { ...state, screen };
+    }
     default:
       return state;
   }
-}
+};
 
 export const initialState = {
   dark: false,

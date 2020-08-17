@@ -44,6 +44,7 @@ export { default as Center } from './Center';
 export { default as Flex } from './Flex';
 export { default as Typography } from './Typography';
 export { default as Surface } from './Surface';
-export { default as ContactForm } from './ContactForm';
+export { default as Form } from './Form';
 export { default as Icon } from './Icon';
+export { default as Title } from './Title';
 

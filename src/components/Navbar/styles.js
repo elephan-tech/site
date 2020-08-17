@@ -12,7 +12,7 @@ export const StyledLink = styled.div`
     @media (max-width: 768px) {
       display: none;
     }
-`
+`;
 
 export const Container = styled.div`
   z-index: 200;
@@ -25,7 +25,7 @@ export const Container = styled.div`
   width: 100%;
   margin: auto;
   display: flex;
-`
+`;
 export const Nav = styled(Surface)`
   display: flex;
   padding: 0;
@@ -34,4 +34,4 @@ export const Nav = styled(Surface)`
   min-height: 60px;
   width: 90%;
   z-index: 1;
-`
+`;

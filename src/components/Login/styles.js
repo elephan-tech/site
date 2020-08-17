@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export default styled.div`
-`
+`;
 
 export const IconWrapper = styled.div`
   width: 140px;
@@ -10,14 +10,14 @@ export const IconWrapper = styled.div`
   flex-shrink: 0;
   align-items: center;
   position: relative;
-`
+`;
 
 export const Container = styled.div`
   position: absolute;
   display: flex;
   bottom: 10px;
   right: 15px;
-`
+`;
 
 export const LoginFab = styled.div`
   position: fixed;
@@ -27,7 +27,7 @@ export const LoginFab = styled.div`
   height: 0px;
   z-index: 99998;
   transition: all 100ms ease 0s;
-`
+`;
 
 export const FabButton = styled.a`
   color: inherit;
@@ -52,7 +52,7 @@ export const FabButton = styled.a`
     display: flex;
     transition: opacity 0.1s ease, bottom 0.1s ease, width 0.3s ease;
     animation: fade-in 0.1s ease-in-out;
-`
+`;
 
 export const Modal = styled.div`
   display: ${({ open }) => open ? 'flex' : 'none'}; /* Hidden by default */
@@ -74,4 +74,4 @@ export const Modal = styled.div`
   width: 80%; /* Could be more or less, depending on screen size */
 }
 
-`
+`;

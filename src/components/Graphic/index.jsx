@@ -1,11 +1,20 @@
-import React from 'react'
-import Lottie from 'react-lottie'
+import React from 'react';
+import Lottie from 'react-lottie';
+import Center from '../Center';
+import { any, bool, object, string } from 'prop-types';
 
 const Graphic = (props) => {
 
-  const { animationData, loop, autoplay, settings, isStopped = false, isPaused = false, height, width } = props;
+  const { animationData,
+    loop,
+    autoplay,
+    settings,
+    isStopped = false,
+    isPaused = false,
+    height,
+    width
+  } = props;
 
-  console.log({ animationData, settings, height, width })
   const options = {
     loop,
     autoplay,
@@ -14,9 +23,8 @@ const Graphic = (props) => {
       preserveAspectRatio: 'xMidYMid slice',
       ...settings
     }
-  }
+  };
 
-  console.log(options)
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -29,14 +37,27 @@ const Graphic = (props) => {
   };
 
   return (
-    <Lottie
-      options={options || defaultOptions}
-      height={height}
-      width={width}
-      isStopped={isStopped}
-      isPaused={isPaused}
-    />
-  )
-}
+    <Center style={{ padding: 8 }}>
+      <Lottie
+        options={options || defaultOptions}
+        height={height}
+        width={width}
+        isStopped={isStopped}
+        isPaused={isPaused}
+      />
+    </Center>
+  );
+};
 
-export default Graphic
+Graphic.propTypes = {
+  animationData: any,
+  loop: bool,
+  autoplay: bool,
+  settings: object,
+  isStopped: bool,
+  isPaused: bool,
+  height: string,
+  width: string
+};
+
+export default Graphic;
