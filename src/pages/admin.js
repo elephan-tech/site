@@ -1,12 +1,13 @@
 import React from 'react';
-import { Section, Typography, Grid, Page, IonCard } from '../components';
+import { Typography, Grid, IonCard } from '../components';
+import { Page, Section } from '../containers';
 import { Button } from 'dope-components';
 
-const admin = ({ user }) => {
+const admin = (props) => {
   return (
-    <Page admin>
+    <Page {...props}>
       <Section>
-        <Typography>{user || 'Admin'}</Typography>
+        <Typography>{props.user || 'Admin'}</Typography>
         <Grid row>
           <Grid column>
             <IonCard round>
