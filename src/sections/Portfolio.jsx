@@ -1,5 +1,5 @@
 // import React, { Fragment } from 'react';
-// import { Section, Typography, Grid, Card } from '../components';
+// import { Typography, Grid, Card } from '../components';
 // import FakeText from '../components/FakeText';
 // import { Button } from 'dope-components';
 

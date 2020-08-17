@@ -1,7 +1,8 @@
 import React from 'react';
 import { Button } from 'dope-components';
-import { Logo, Section, Grid, Input, IonCard, IonIcon } from '../components';
+import { Logo, Grid, Input, IonCard, IonIcon } from '../components';
 import { keyOutline, personCircle } from 'ionicons/icons';
+import { Section } from '../containers';
 
 const Login = () => {
 
