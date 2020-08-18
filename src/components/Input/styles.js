@@ -9,12 +9,12 @@ export const InputContainer = styled.div`
   margin: ${props => props.theme.unit()};
   margin-left: ${props => props.alignStart ? '0px' : props.theme.unit};
   border: 1px solid ${props => props.borderless ? 'none' : `${props.theme.palette.primary.main}50`};
-  border-color: ${props => !props.error ? props.theme.palette.error : 'inherit'};
+  border-color: ${props => !props.error ? props.theme.error : 'inherit'};
   border-radius: 5px;
   text-align: left;
   flex: 1 0 auto;
   &:active, &:focus, &:hover{
-    border: 1px solid ${props => props.borderless ? 'none' : `${props.theme.palette.primary.main}`};
+    border: 1px solid ${props => props.borderless ? 'none' : !props.error ? props.theme.error : `${props.theme.palette.primary.main}`};
   }
 `;
 export const StyledInput = styled.input`
@@ -54,7 +54,7 @@ margin: 0px ${props => props.theme.unit()};
 `;
 
 export const ErrorMessage = styled(Label)`
-color: ${ props => props.theme.palette.error};
+color: ${ props => props.theme.error};
 font-size: ${props => props.theme.font.size.small};
 `;
 
