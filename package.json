@@ -27,7 +27,7 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@storybook/addons": "^5.3.17",
     "@storybook/theming": "^5.3.17",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "dope-components": "^1.6.0",
     "dope-grc": "^1.1.0",
     "font-awesome": "^4.7.0",
